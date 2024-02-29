@@ -1,30 +1,37 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+
+  <div id="app">
+    <router-view to="/home"></router-view>
+  </div>
+
 </template>
 
+<script>
+
+  import HomePage from '../src/components/HomePage.vue';
+
+  export default {
+    name: "App",
+    components: {
+      HomePage,
+    }
+  }
+
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
 
-nav {
-  padding: 30px;
-}
+  @import url('https://fonts.cdnfonts.com/css/toxigenesis');  
+  @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
 
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  *{
+    margin: 0 ;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Toxigenesis', sans-serif;   
+    scroll-behavior: smooth;
+ }
+
 </style>
+

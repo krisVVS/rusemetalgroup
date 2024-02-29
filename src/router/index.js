@@ -1,25 +1,70 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomePage from '../components/HomePage.vue';
+import ContactsPage from '../components/ContactsPage.vue'
+import IsoProductsPage from '../components/IsoProductsPage.vue'
+import AboutUsPage from '../components/AboutUsPage.vue'
+import ProductsPage from '../components/ProductsPage.vue'
+import MetalPipesPage from '../components/MetalPipesPage.vue'
+import GalleryPage from '../components/GalleryPage.vue'
 
 const routes = [
   {
-    path: '/',
+    path: '/home',
     name: 'home',
-    component: HomeView
+    component: HomePage
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+    path: '/contacts',
+    name: 'contacts',
+    component: ContactsPage
+  },
+  {
+    path: '/isoproducts',
+    name: 'iso-products',
+    component: IsoProductsPage
+  },
+  {
+    path: '/about-us',
+    name: 'about-us',
+    component: AboutUsPage
+  },
+  {
+    path: '/products',
+    name: 'products',
+    component: ProductsPage
+  },
+  { 
+    path: '/', 
+    redirect: '/home' 
+  },
+  { 
+    path: '/metal-pipes', 
+    name: 'metal-pipes',
+    component: MetalPipesPage
+  },
+  { 
+    path: '/gallery', 
+    name: 'gallery',
+    component: GalleryPage
+  },
 ]
 
-const router = createRouter({
-  history: createWebHistory(process.env.BASE_URL),
-  routes
-})
 
-export default router
+
+
+const router = createRouter({
+  history: createWebHistory(),
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    if (to.hash) {
+      return { el: to.hash, behavior: 'smooth' };
+    } else if (savedPosition) {
+      return savedPosition;
+    } else {
+      return { top: 0, behavior: 'smooth' };
+    }
+  },
+});
+
+
+export default router;
