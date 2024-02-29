@@ -145,7 +145,6 @@
 
     .nav-item{
       margin-right: 0;
-      border-bottom: solid 2px white;
       width: 100%;
       padding: 0.5em;
     }
