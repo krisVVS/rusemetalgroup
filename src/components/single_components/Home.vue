@@ -1,7 +1,7 @@
 <template>
   <div class="home-section">
     <div class="image-container">
-      <video :src="videoPath" autoplay loop muted class="bg-video"></video>
+      <video :src="videoPath" autoplay muted loop playsinline  class="bg-video"></video>
       <div ref="imageOverlay" class="image-overlay" :class="{ 'fade-in': shouldFadeIn }">
         <p class="home-title">Разгледайте нашите продукти!</p>
         <router-link to="/products" class="products-btn">ПРОДУКТИ</router-link>
@@ -9,10 +9,10 @@
     </div>
   </div>
 </template>
-
+ 
 <script>
 import bgVideo from '../../utils/bgvideo.mp4';
-
+ 
 export default {
   name: "home-main",
   data() {
@@ -28,7 +28,7 @@ export default {
     checkFadeIn() {
       if (this.shouldFadeIn) {
         const imageOverlay = this.$refs.imageOverlay;
-
+ 
         if (imageOverlay) {
           imageOverlay.classList.add("fade-in");
           imageOverlay.addEventListener("transitionend", this.handleTransitionEnd, { once: true });
@@ -42,21 +42,21 @@ export default {
   },
 };
 </script>
-
+ 
 <style>
 .home-section {
   text-align: center;
   position: relative;
   overflow: hidden;
 }
-
+ 
 .image-container {
   width: 100%;
   height: 100vh;
   position: relative;
   overflow: hidden;
 }
-
+ 
 .bg-video {
   object-fit: cover;
   position: absolute;
@@ -65,7 +65,7 @@ export default {
   width: 100%;
   height: 100%;
 }
-
+ 
 .image-overlay {
   position: absolute;
   top: 40%;
@@ -78,11 +78,11 @@ export default {
   width: 70%;
   opacity: 0;
 }
-
+ 
 .fade-in {
   animation: fadeIn 1s ease-in-out forwards;
 }
-
+ 
 .home-section::before {
   content: "";
   position: absolute;
@@ -95,14 +95,14 @@ export default {
   border-bottom-right-radius: 50%;
   z-index: 1;
 }
-
+ 
 .home-title {
   font-size: 5em;
   padding-bottom: 1em;
   text-shadow: 3px 3px 3px #476c8a;
   margin: 0;
 }
-
+ 
 .products-btn {
   padding: 1em 3em;
   font-size: 1em;
@@ -114,13 +114,13 @@ export default {
   text-decoration: none;
   z-index: 10;
 }
-
+ 
 .products-btn:hover {
   border: solid 2px #476c8a;
   color: #476c8a;
   background-color: rgb(229, 223, 218, 0.8);
 }
-
+ 
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -129,22 +129,22 @@ export default {
     opacity: 1;
   }
 }
-
+ 
 @media (max-width: 768px) {
   .image-overlay {
     width: 80%;
   }
-
+ 
   .home-title {
     font-size: 2.5em;
   }
-
+ 
   .products-btn {
     padding: 0.8em 2em;
     font-size: 0.9em;
     border-radius: 25px;
   }
-
+ 
   .home-section::before {
   content: "";
   position: absolute;
@@ -156,27 +156,27 @@ export default {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   z-index: 1;
-
-
-  
+ 
+ 
+ 
 }
 }
-
+ 
 @media (max-width: 585px) {
   .home-title {
     font-size: 2em;
   }
-
+ 
   .products-btn {
     padding: 0.6em 1.5em;
     font-size: 0.8em;
     border-radius: 20px;
   }
-
+ 
 }
-
-
-
+ 
+ 
+ 
 @media (max-width: 1600px) {
   .home-section::before {
   content: "";
@@ -191,7 +191,7 @@ export default {
   z-index: 1;
 }
 }
-
+ 
 @media (max-width: 1050px) {
   .home-section::before {
   content: "";
@@ -206,7 +206,7 @@ export default {
   z-index: 1;
 }
 }
-
+ 
 @media (max-width: 590px) {
   .home-section::before {
   content: "";
@@ -221,7 +221,7 @@ export default {
   z-index: 1;
 }
 }
-
+ 
 @media (max-width: 460px) {
   .home-section::before {
   content: "";
@@ -236,7 +236,7 @@ export default {
   z-index: 1;
 }
 }
-
+ 
 @media (max-width: 1400px) {
   .home-section::before {
   content: "";
@@ -251,5 +251,5 @@ export default {
   z-index: 1;
 }
 }
-
+ 
 </style>
