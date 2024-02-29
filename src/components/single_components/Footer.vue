@@ -37,10 +37,7 @@
       </div>
 
       
-      <div class="gallery-content">
-
-    <router-link to="/gallery" class="gallery-buttonа">Галерия</router-link>
-    </div>
+      
   
       <div class="footer-bottom">
         <p>&copy; 2024 Русе Метал Груп. Всички права запазени.</p>

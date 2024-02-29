@@ -5,7 +5,6 @@ import IsoProductsPage from '../components/IsoProductsPage.vue'
 import AboutUsPage from '../components/AboutUsPage.vue'
 import ProductsPage from '../components/ProductsPage.vue'
 import MetalPipesPage from '../components/MetalPipesPage.vue'
-import GalleryPage from '../components/GalleryPage.vue'
 
 const routes = [
   {
@@ -41,11 +40,6 @@ const routes = [
     path: '/metal-pipes', 
     name: 'metal-pipes',
     component: MetalPipesPage
-  },
-  { 
-    path: '/gallery', 
-    name: 'gallery',
-    component: GalleryPage
   },
 ]
 
