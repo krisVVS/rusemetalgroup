@@ -95,6 +95,9 @@ export default {
   border-bottom-right-radius: 50%;
   z-index: 1;
 }
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
  
 .home-title {
   font-size: 5em;
