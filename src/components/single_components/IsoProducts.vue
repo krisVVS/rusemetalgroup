@@ -1,25 +1,49 @@
 <template>
-    <div class="iso-products">
-      <div class="products-header-container">
-        <p class="products-header">Панели</p>
-      </div>
  
-      <div class="iso-products-container">
-        <div v-for="(product, index) in visibleProducts" :key="product.productName" class="iso-product">
-          <img :src="product.imgPath" class="product-image">
-          <p class="product-name">{{ product.productName }}</p>
-          <p class="product-desc">{{ product.desctiption[0]}}</p>
-          <button @click="showProductDetails(product)" class="view-more-btn">ВИЖ ПОВЕЧЕ</button>
+    <div class="iso-products">
+ 
+        <div class="products-header-container">
+            <p class="products-header">Панели</p>
+ 
         </div>
  
-        <button v-if="showLoadMoreButton" class="load-more-btn" @click="loadMore">ЗАРЕДИ ОЩЕ...</button>
-      </div>
+        <div class="iso-products-container">
  
-      <div v-if="selectedProduct" class="product-details">
-        <!-- Product details content -->
-      </div>
+            <div class="iso-product" v-for="(product, index) in visibleProducts" :key="product.productName">
+                <img :src="product.imgPath" class="product-image">
+                <p class="product-name">{{ product.productName }}</p>
+                <p class="product-desc">{{ product.desctiption[0]}}</p>
+                <button @click="showProductDetails(product)" class="view-more-btn">ВИЖ ПОВЕЧЕ</button>
+ 
+            </div>
+ 
+            <button v-if="showLoadMoreButton" class="load-more-btn" @click="loadMore">ЗАРЕДИ ОЩЕ...</button>
+ 
+ 
+ 
+        </div>
+ 
+        <div v-if="selectedProduct" class="product-details">
+            <button @click="closeProductDetails" class="close-btn">&#x2715;</button>
+            <img :src="selectedProduct.imgPath" class="product-more-image">
+            <p class="product-more-name">{{ selectedProduct.productName }}</p>
+ 
+            <div class="product-more-sec">
+                <div class="product-details-section">
+                    <p class="section-title">Описание:</p>
+                    <div v-for="desc in selectedProduct.desctiption" :key="desc" class="product-more-desc">{{ desc }}</div>
+                </div>
+                 <div class="product-details-section">
+                    <p class="section-title">Спецификации:</p>
+                    <div v-for="spec in selectedProduct.specs" :key="spec" class="list-item"><span class="bullet">&#x2023; </span>{{ spec }}</div>
+                </div>
+            </div>
+ 
+        </div>
+ 
     </div>
-  </template>
+ 
+</template>
  
 <script>
     import image1Path from '../../utils/IsoProducts/fortelia1.jpg';
@@ -630,17 +654,17 @@
         selectedProduct: null,
         };
     },
-  computed: {
+    computed: {
     visibleProducts() {
       return this.products.slice(0, this.visibleCount);
     },
     showLoadMoreButton() {
       return this.visibleCount < this.products.length;
     },
-  },
-  methods: {
+    },
+    methods: {
     loadMore() {
-      this.visibleCount += 6;
+        this.visibleCount += 6;
     },
     showProductDetails(product) {
       this.selectedProduct = product;
@@ -656,8 +680,9 @@
     enableScroll() {
       document.body.style.overflow = 'auto';
     },
-  },
-};
+    },
+ 
+    };
 </script>
  
  
