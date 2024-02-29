@@ -20,7 +20,7 @@
 </template>
  
 <script>
-import image1Path from '../../utils/_MG_9766.jpeg';
+import image1Path from '../../utils/MG_9766.jpeg';
 import image2Path from '../../utils/IMG_0743.jpeg';
 import image3Path from '../../utils/IMG_0749.jpeg';
  
