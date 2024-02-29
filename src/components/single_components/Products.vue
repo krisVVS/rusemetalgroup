@@ -22,11 +22,11 @@
     </div>
   </div>
 </template>
-
+ 
 <script>
 import image1Path from '../../utils/_MG_9697.jpeg';
 import image2Path from '../../utils/IMG_0746.jpeg';
-
+ 
 export default {
   name: 'products',
   data() {
@@ -47,19 +47,19 @@ export default {
       rootMargin: '0px',
       threshold: 0.1, // Adjust the threshold as needed
     };
-
+ 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         const target = entry.target;
         if (entry.isIntersecting) {
           target.classList.add('enter');
-
+ 
           // Disconnect the observer once the target enters the view
           observer.unobserve(target);
         }
       });
     }, options);
-
+ 
     const products = this.$refs.productsRef;
     products.forEach((product) => {
       product.classList.add('before-enter');
@@ -69,16 +69,16 @@ export default {
 },
 };
 </script>
-
-
-  
+ 
+ 
+ 
   <style scoped>
-
+ 
   .product.before-enter {
     opacity: 0;
     transform: translateY(20px);
   }
-
+ 
   .product.enter {
     opacity: 1;
     transform: translateY(0);
@@ -89,7 +89,7 @@ export default {
       background-color: #eae7e6;
       padding: 0 1em;
     }
-  
+ 
     .products-container {
       display: flex;
       justify-content: space-around;
@@ -98,7 +98,7 @@ export default {
       flex-wrap: wrap;
       padding-bottom: 2em;
     }
-  
+ 
     .product {
       border-radius: 10px;
       background-color: #e5dfda;
@@ -109,7 +109,7 @@ export default {
       border: 2px solid #7f8e9e;
       box-shadow: 8px 5px 8px rgb(71, 108, 138, 0.55);
     }
-  
+ 
     .product-image {
       position: relative;
       overflow: hidden;
@@ -120,13 +120,13 @@ export default {
       border-top-left-radius: 2%;
       border-bottom: 2px solid #7f8e9e;
     }
-  
+ 
     .product-name {
       font-size: 2em;
       padding: 1em 0 2em 1em;
       color: #49657b;
     }
-  
+ 
     .product-btn {
       text-decoration: none;
       color: white;
@@ -140,19 +140,19 @@ export default {
       align-self: center;
       margin: 2em 0;
     }
-  
+ 
     .product-btn:hover {
       border: solid 2px #476c8a;
       color: #476c8a;
       background-color: rgb(255, 255, 255, 0.5);
     }
-  
+ 
     .products-header{
       text-align: center;
       padding: 1em 0; 
       padding-bottom: 0.5em;
     }
-  
+ 
     .products-header {
       font-size: 5em;
       font-weight: bold;
@@ -160,7 +160,7 @@ export default {
       outline-color: white;
       padding-bottom: 1em;
     }
-  
+ 
     .products-info {
       font-size: 1.5em;
       color: #404040;
@@ -172,35 +172,34 @@ export default {
       padding-bottom: 3em;
       text-align: center;
     }
-  
-    
+ 
+ 
     @media (max-width: 960px) {
       .product {
         width: 100%; 
       }
-  
+ 
       .product-btn {
         width: 50%; 
       }
-
+ 
       .products{
         font-size: 60%;
       }
     }
-
-
-    @media (max-width: 300px) {
+ 
+ 
+    @media (max-width: 380px) {
       .product {
         width: 100%; 
       }
-  
+ 
       .product-btn {
         width: 50%; 
       }
-
+ 
       .products{
         font-size: 45%;
       }
     }
   </style>
-  
