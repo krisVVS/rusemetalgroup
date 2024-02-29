@@ -18,12 +18,12 @@
     </div>
   </div>
 </template>
-
+ 
 <script>
 import image1Path from '../../utils/_MG_9736.jpeg';
 import image2Path from '../../utils/IMG_0743.jpeg';
 import image3Path from '../../utils/IMG_0749.jpeg';
-
+ 
 export default {
   data() {
     return {
@@ -56,7 +56,7 @@ export default {
         }
       });
     });
-
+ 
     elements.forEach((element) => {
       element.classList.add('before-enter');
       observer.observe(element);
@@ -64,16 +64,16 @@ export default {
   },
 };
 </script>
-
-
-
-
+ 
+ 
+ 
+ 
 <style>
-
+ 
   .about-us{
     background-color: #eae7e6;
   }
-
+ 
   .info-image{
     position: relative;
     overflow: hidden;
@@ -82,7 +82,7 @@ export default {
     object-fit: cover;
     margin-top: 5em;
   }
-
+ 
   .info-rectangle{
     border: solid 2px white;
     width: 30%;
@@ -96,17 +96,17 @@ export default {
     transform: translateX(-100%);
     transition: transform 1s ease-in-out, opacity 2s ease-in-out;
   }
-
+ 
   #info1, #info3 {
     margin-left: 65%;
     animation: slideInRightToLeft s ease-in forwards;
   }
-
+ 
   #info2 {
     margin-left: 5%;
     animation: slideInLeftToRight s ease-out forwards;
   }
-
+ 
   @keyframes slideInRightToLeft {
     from {
       transform: translateX(100%);
@@ -115,7 +115,7 @@ export default {
       transform: translateX(0);
     }
   }
-
+ 
   @keyframes slideInLeftToRight {
     from {
       transform: translateX(-100%);
@@ -124,29 +124,29 @@ export default {
       transform: translateX(0);
     }
   }
-
+ 
   .info-rectangle.before-enter {
     transform: translateX(-100%);
     opacity: 0;
   }
-
+ 
   .info-rectangle.enter {
     transform: translateX(0);
     opacity: 1;
   }
-
-
+ 
+ 
   .info-title{
     padding-bottom: 0.5em;
     color: #f8fcf8;
     font-size: 2.3em;
   }
-
+ 
   .info-desc{
     color: #e5dfda;
     font-size: 1.3em;
   }
-
+ 
   .about-title{
     font-size: 5em;
     font-weight: bold;
@@ -155,7 +155,7 @@ export default {
     color: #49657b;
     outline-color: white;
   }
-
+ 
   .about-img{
     position: relative;
     overflow: hidden;
@@ -163,20 +163,20 @@ export default {
     height: 30em;
     object-fit: cover;
     margin-top: 5em;
-
+ 
   } 
-
+ 
   .info{
     height: 35em;
   }
-
+ 
   .about-desc{
     text-align: center;
     padding: 1em;
     font-size: 1.5em;
     color: 	#404040;
   }
-
+ 
   .mask{
     background-color: rgba(0, 0, 0, 0.5); 
     width: 100%;
@@ -185,137 +185,137 @@ export default {
     position: absolute;
     z-index: 1;
   }
-
+ 
   #info1, #info3{
     margin-left: 65%;
   }
-
+ 
   #info2{
     margin-left: 5%;
   }
-
+ 
   @media (max-width: 1700px) {
     .info-rectangle {
       width: 30%;
     }
-
+ 
     #info1, #info3{
       margin-left: 55%;
     }
-
+ 
   #info2{
       margin-left: 15%;
     }
-
+ 
   }
-
+ 
   @media (max-width: 1330px) {
-
+ 
     .info-rectangle {
       width: 35%;
     }
-
+ 
     #info1, #info3{
     margin-left: 55%;
   }
-
+ 
     #info2{
       margin-left: 10%;
     }
-
+ 
   }
-
-
+ 
+ 
   @media (max-width: 1150px) {
-
+ 
   .info-rectangle {
     width: 43%;
   }
-
+ 
   #info1, #info3{
   margin-left: 48%;
   }
-
+ 
   #info2{
     margin-left: 3%;
   }
-
+ 
 }
-
+ 
   @media (max-width: 700px) {
-
+ 
       .info-rectangle {
         width: 40%;
       }
-
+ 
       #info1, #info3{
       margin-left: 45%;
       }
-
+ 
       #info2{
         margin-left: 10%;
       }
-
+ 
   }
-
-
+ 
+ 
   @media (max-width: 600px) {
-
+ 
     .info-rectangle {
       width: 60%;
-      
+ 
     }
-
-
+ 
+ 
     #info1, #info3{
     margin-left: 30%;
     }
-
+ 
     #info2{
       margin-left: 10%;
     }
-
+ 
   }
-
+ 
   @media (max-width: 400px) {
-
+ 
     .info-rectangle {
       width: 80%;
-      
+ 
     }
-
-
+ 
+ 
     #info1, #info3{
     margin-left: 10%;
     }
-
+ 
     #info2{
       margin-left: 10%;
     }
-
+ 
     }
-
-
+ 
+ 
   @media (max-width: 960px) {
     .info-rectangle {
       max-width: 100%;
       margin: 0 auto;
     }
-
+ 
     .about-us{
       font-size: 60%;
     }
-
+ 
   }
-
+ 
   @media (max-width: 300px) {
-
-.info-rectangle{
-  font-size: 90%;
-  width: 100%;
-  margin: 0;
-}
-
-
+ 
+  #info1, #info2, #info3{
+    width: 90%;
+    margin-left: 10%;
+    right: 1.5em;
+  }
+ 
+ 
 }
 </style>
