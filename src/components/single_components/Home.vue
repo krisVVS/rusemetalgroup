@@ -1,7 +1,10 @@
 <template>
   <div class="home-section">
     <div class="image-container">
-      <video :src="videoPath" autoplay muted loop controls controlsList="nofullscreen" class="bg-video"></video>
+      <!-- <video :src="videoPath" autoplay muted loop controls controlsList="nofullscreen" class="bg-video"></video> -->
+      <div class="mask-home">    </div>
+      <img class="image-home" src='../../utils/IMG_0743.jpeg'>
+ 
       <div ref="imageOverlay" class="image-overlay" :class="{ 'fade-in': shouldFadeIn }">
         <p class="home-title">Разгледайте нашите продукти!</p>
         <router-link to="/products" class="products-btn">ПРОДУКТИ</router-link>
@@ -44,6 +47,28 @@ export default {
 </script>
  
 <style>
+ 
+video::-webkit-media-controls-fullscreen-button {
+  display: none;
+}
+ 
+ 
+.image-home{
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+ 
+}
+ 
+.mask-home {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+ 
 .home-section {
   text-align: center;
   position: relative;
@@ -94,9 +119,6 @@ export default {
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   z-index: 1;
-}
-video::-webkit-media-controls-fullscreen-button {
-  display: none;
 }
  
 .home-title {
