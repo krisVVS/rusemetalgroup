@@ -22,7 +22,7 @@
   </template>
  
 <script>
-import image1Path from '../../utils/IMG_0743.jpeg';
+import image1Path from '../../utils/IMG_0744.jpeg';
 import image2Path from '../../utils/IMG_0749.jpeg';
  
 export default {
@@ -222,10 +222,10 @@ export default {
 }
  
  
-@media(max-width: 410px){
+@media(max-width: 500px){
  
   #title2{
-    bottom: 4.5em;
+    bottom: 5em;
     padding:0;
 }
  
