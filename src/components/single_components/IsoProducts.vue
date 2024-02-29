@@ -1,50 +1,26 @@
 <template>
-
     <div class="iso-products">
-
-        <div class="products-header-container">
-            <p class="products-header">Панели</p>
-
+      <div class="products-header-container">
+        <p class="products-header">Панели</p>
+      </div>
+ 
+      <div class="iso-products-container">
+        <div v-for="(product, index) in visibleProducts" :key="product.productName" class="iso-product">
+          <img :src="product.imgPath" class="product-image">
+          <p class="product-name">{{ product.productName }}</p>
+          <p class="product-desc">{{ product.desctiption[0]}}</p>
+          <button @click="showProductDetails(product)" class="view-more-btn">ВИЖ ПОВЕЧЕ</button>
         </div>
-
-        <div class="iso-products-container">
-
-            <div class="iso-product" v-for="(product, index) in visibleProducts" :key="product.productName">
-                <img :src="product.imgPath" class="product-image">
-                <p class="product-name">{{ product.productName }}</p>
-                <p class="product-desc">{{ product.desctiption[0]}}</p>
-                <button @click="showProductDetails(product)" class="view-more-btn">ВИЖ ПОВЕЧЕ</button>
-
-            </div>
-
-            <button v-if="showLoadMoreButton" class="load-more-btn" @click="loadMore">ЗАРЕДИ ОЩЕ...</button>
-
-
-
-        </div>
-        
-        <div v-if="selectedProduct" class="product-details">
-            <button @click="closeProductDetails" class="close-btn">&#x2715;</button>
-            <img :src="selectedProduct.imgPath" class="product-more-image">
-            <p class="product-more-name">{{ selectedProduct.productName }}</p>
-
-            <div class="product-more-sec">
-                <div class="product-details-section">
-                    <p class="section-title">Описание:</p>
-                    <div v-for="desc in selectedProduct.desctiption" :key="desc" class="product-more-desc">{{ desc }}</div>
-                </div>
-                 <div class="product-details-section">
-                    <p class="section-title">Спецификации:</p>
-                    <div v-for="spec in selectedProduct.specs" :key="spec" class="list-item"><span class="bullet">&#x2023; </span>{{ spec }}</div>
-                </div>
-            </div>
-                
-        </div>
-
+ 
+        <button v-if="showLoadMoreButton" class="load-more-btn" @click="loadMore">ЗАРЕДИ ОЩЕ...</button>
+      </div>
+ 
+      <div v-if="selectedProduct" class="product-details">
+        <!-- Product details content -->
+      </div>
     </div>
-
-</template>
-
+  </template>
+ 
 <script>
     import image1Path from '../../utils/IsoProducts/fortelia1.jpg';
     import image2Path from '../../utils/IsoProducts/greenroof.jpg';
@@ -90,8 +66,8 @@
     import image42Path from '../../utils/IsoProducts/isoray.jpg';
     import image43Path from '../../utils/IsoProducts/isogrecata.jpg';
     import image44Path from '../../utils/IsoProducts/isoclass.jpg';
-
-
+ 
+ 
     export default {
     name: 'products',
     data() {
@@ -654,17 +630,17 @@
         selectedProduct: null,
         };
     },
-    computed: {
+  computed: {
     visibleProducts() {
       return this.products.slice(0, this.visibleCount);
     },
     showLoadMoreButton() {
       return this.visibleCount < this.products.length;
     },
-    },
-    methods: {
+  },
+  methods: {
     loadMore() {
-        this.visibleCount += 6;
+      this.visibleCount += 6;
     },
     showProductDetails(product) {
       this.selectedProduct = product;
@@ -680,25 +656,24 @@
     enableScroll() {
       document.body.style.overflow = 'auto';
     },
-    },
-
-    };
+  },
+};
 </script>
-
-
+ 
+ 
 <style>
-
+ 
     .iso-products {
       width: 100%;
       background-color: #eae7e6;
       padding: 0 1em;
     }
-
+ 
     .products-header, .products-info {
         text-align: center;
         padding: 1em 0; 
     }
-
+ 
     .products-header {
         font-size: 5em;
         font-weight: bold;
@@ -711,8 +686,8 @@
         margin-right: 3em;
         text-align: center;
     }
-
-
+ 
+ 
     .iso-products-container{
         display: flex;
         justify-content: space-around;
@@ -721,7 +696,7 @@
         flex-wrap: wrap;
         margin: 0 15%;
     }
-
+ 
     .product-image{
         width: 100%;
         border: 2px solid #49657b;
@@ -729,15 +704,15 @@
         height: 45%;
         object-fit: cover;
     }
-
+ 
     .iso-product{
         width: 30%;
         margin-bottom: 5em;
         margin-bottom: 4em;
         height: 100%
-
+ 
     }
-
+ 
     .product-name{
         padding: 1em;
         margin: 0 auto;
@@ -747,12 +722,12 @@
         font-weight: bolder;
         border-bottom: 2px solid #49657b;
     }
-
+ 
     .product-desc{
         color:#404040 ;
         margin-top: 1em;
     }
-
+ 
     .view-more-btn{
         text-decoration: none;
         color: white;
@@ -765,13 +740,13 @@
         text-align: center;
         margin-top: 2em;
     }
-
+ 
     .view-more-btn:hover {
       border: solid 2px #476c8a;
       color: #476c8a;
       background-color: rgb(255, 255, 255, 0.5);
     }
-
+ 
     .load-more-btn{
         width: 100%;
         margin: 0 40%;
@@ -787,9 +762,9 @@
         width: 60%; 
         text-align: center;
         margin-bottom: 3em;
-
+ 
     }
-
+ 
     .close-btn{
         background-color: rgba(0, 0, 0, 0);
         border: none;
@@ -800,19 +775,19 @@
         right: 1em; 
         color: lightgray;
         cursor: pointer;
-
+ 
     }
-
+ 
     .close-btn:hover{
         color: black;
     }
-
+ 
     .load-more-btn:hover{
         border: solid 2px #476c8a;
         color: #476c8a;
         background-color: rgb(255, 255, 255, 0.5);
     }
-
+ 
     .product-details{
         position: fixed;
         top: 50%;
@@ -827,7 +802,7 @@
         border: 2px solid #49657b;
         overflow: scroll;
     }
-
+ 
     .product-more-image{
         width: 100%;
         height: 40%;
@@ -835,7 +810,7 @@
         border-radius: 5px;
         border-bottom: 3px solid #49657b;
     }
-
+ 
     .product-more-name{
         padding: 0.5em;
         width: 100%;
@@ -847,26 +822,26 @@
         letter-spacing: 10px;
         text-align: center;
     }
-
+ 
     .bullet{
         font-size: 1.5em;
         color: #49657b;
     }
-
+ 
     .section-title{
         margin-bottom: 1em;
         font-size: 1.5em;
         color: #49657b;
     }
-
+ 
     .product-more-sec{
         display: flex;
     }
-
+ 
     .product-more-desc{
         margin-bottom: 0.5em;
     }
-
+ 
     .product-details-section{
         width: 50%;
         padding: 2em;
@@ -874,68 +849,68 @@
         cursor: pointer;
         padding-left: 4em;
     }
-
-
+ 
+ 
     @media(max-width: 1100px){
         .product-desc{
         display: none;
       }
-
+ 
     }
-
-    
+ 
+ 
     @media(max-width: 620px){
         .products-header {
             margin: 0.5em 0;
         }
-
+ 
     }
-
-
+ 
+ 
     @media (max-width: 960px) {
-
+ 
       .iso-products{
         font-size: 60%;
       }
-
+ 
       .products-header-container{
         margin: 0 5em;
       }
-
+ 
       .iso-products-container{
         margin: 0 10%;
-
+ 
       }
-
+ 
       .iso-product{
         width: 40%;
       }
-      
-
+ 
+ 
       .product-desc{
         display: none;
       }
-
+ 
       .view-more-btn{
         width: 100%;
         font-size: 0.8em;
       }
-
+ 
       .load-more-btn{
         margin: 0 20%;
         margin-bottom: 2em;
       }
-    
+ 
       .product-details{
         left: 50%;
         width: 100%;
         height: 100%;
       }
-
+ 
       .product-more-sec{
         overflow: auto;
       }
-
-
+ 
+ 
     }
 </style>
