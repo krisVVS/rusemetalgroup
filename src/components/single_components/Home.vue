@@ -3,7 +3,7 @@
     <div class="image-container">
       <!-- <video :src="videoPath" autoplay muted loop controls controlsList="nofullscreen" class="bg-video"></video> -->
       <div class="mask-home">    </div>
-      <img class="image-home" src='../../utils/IMG_0743.jpeg'>
+      <img class="image-home" src='../../utils/_MG_9736.jpeg'>
  
       <div ref="imageOverlay" class="image-overlay" :class="{ 'fade-in': shouldFadeIn }">
         <p class="home-title">Разгледайте нашите продукти!</p>
