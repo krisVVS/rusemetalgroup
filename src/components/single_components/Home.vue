@@ -1,7 +1,7 @@
 <template>
   <div class="home-section">
     <div class="image-container">
-      <video :src="videoPath" autoplay muted loop playsinline  class="bg-video"></video>
+      <video :src="videoPath" autoplay muted loop playsinline webkit-playsinline class="bg-video"></video>
       <div ref="imageOverlay" class="image-overlay" :class="{ 'fade-in': shouldFadeIn }">
         <p class="home-title">Разгледайте нашите продукти!</p>
         <router-link to="/products" class="products-btn">ПРОДУКТИ</router-link>
