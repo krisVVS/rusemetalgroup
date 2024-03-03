@@ -245,9 +245,6 @@ export default {
   font-size: 350%;
 }
 
-.pipe-product{
-  height:100%;
-}
 }
  
  
