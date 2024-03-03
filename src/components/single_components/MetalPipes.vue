@@ -225,7 +225,7 @@ export default {
 @media(max-width: 500px){
  
   #title2{
-    bottom: 5em;
+    bottom: 4.5em;
     padding:0;
 }
  
