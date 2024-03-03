@@ -6,7 +6,7 @@
     </div>
     <div class="contact-section">
       <iframe
-        src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d5752.457781312248!2d26.00066!3d43.871809!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDPCsDUyJzE4LjUiTiAyNsKwMDAnMDIuNCJF!5e0!3m2!1sbg!2sus!4v1707251718041!5m2!1sbg!2sus"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d466.2378487661805!2d26.010514280874236!3d43.873485246072065!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40ae67895809145b%3A0x5c7f6e10ac2da08b!2z0KHQmtCb0JDQlCDQnNCV0KLQkNCb0Jgg0KDRg9GB0LUg0JzQtdGC0LDQuyDQk9GA0YPQvyDQldCe0J7QlA!5e0!3m2!1sbg!2sbg!4v1709477099024!5m2!1sbg!2sbg" 
         width="100%"
         height="450"
         style="border:0;"

@@ -41,7 +41,7 @@
   
       <div class="footer-bottom">
         <p>&copy; 2024 Русе Метал Груп. Всички права запазени.</p>
-        <p class="wm">Създадено от ABK Marketing Agency</p>
+        <a href="tel:0889010006" class="wm">Създадено от ABK Marketing Agency</a>
       </div>
 
     </div>
@@ -64,6 +64,7 @@
   
   .wm{
     font-size: 0.8em;
+    text-decoration: underline dotted;
   }
 
   .footer-content {
@@ -121,6 +122,9 @@
     margin-top: 4em;
     padding: 2em;
     background-color: #7f8e9e;
+  }
+  .footer-bottom a {
+    text-decoration:underline;
   }
 
   .fab{
