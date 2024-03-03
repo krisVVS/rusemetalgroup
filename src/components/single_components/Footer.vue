@@ -16,23 +16,23 @@
           <p> бул. „Тутракан“ 44</p>
           <p>Русе</p>
           <p>България</p>
-          <router-link to="/contacts" ><i class="fas fa-map-marker-alt"></i>  Карта</router-link>
+          <router-link to="/contacts" @click="enableScroll"><i class="fas fa-map-marker-alt"></i>  Карта</router-link>
         </div>
 
 
-        <div class="footer-section">
+         <div class="footer-section">
           <h3>Продукти</h3>
-          <router-link to="/isoproducts" >Tермоизолационни панели</router-link>
-          <router-link to="/metal-pipes" >Метални профили и тръби</router-link>
+          <router-link to="/isoproducts" @click="enableScroll">Tермоизолационни панели</router-link>
+          <router-link to="/metal-pipes" @click="enableScroll">Метални профили и тръби</router-link>
         </div>
-  
+ 
         <div class="footer-section">
           <h3>Бърза навигация</h3>
-          <router-link to="/home" >Начало</router-link>
-          <router-link to="/about-us" >За Нас</router-link>
-          <router-link to="/products" >Продукти</router-link>
-          <router-link to="/contacts" >Контакти</router-link>
-
+          <router-link to="/home" @click="enableScroll">Начало</router-link>
+          <router-link to="/about-us" @click="enableScroll">За Нас</router-link>
+          <router-link to="/products" @click="enableScroll">Продукти</router-link>
+          <router-link to="/contacts" @click="enableScroll">Контакти</router-link>
+ 
         </div>
       </div>
 
@@ -50,6 +50,11 @@
   <script>
   export default {
     name: 'Footer',
+     methods: {
+    enableScroll() {
+      document.body.style.overflow = 'auto';
+    },
+  }
   };
   </script>
   

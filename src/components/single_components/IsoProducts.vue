@@ -661,18 +661,20 @@
     showLoadMoreButton() {
       return this.visibleCount < this.products.length;
     },
-    },
-    methods: {
+  },
+  methods: {
     loadMore() {
-        this.visibleCount += 6;
+      this.visibleCount += 6;
     },
     showProductDetails(product) {
       this.selectedProduct = product;
       this.disableScroll();
+      window.addEventListener('popstate', this.handlePopstate);
     },
     closeProductDetails() {
       this.selectedProduct = null;
       this.enableScroll();
+      window.removeEventListener('popstate', this.handlePopstate);
     },
     disableScroll() {
       document.body.style.overflow = 'hidden';
@@ -680,9 +682,17 @@
     enableScroll() {
       document.body.style.overflow = 'auto';
     },
+    handlePopstate() {
+      this.enableScroll();
     },
- 
-    };
+  },
+  beforeDestroy() {
+    window.removeEventListener('popstate', this.handlePopstate);
+  },
+  mounted() {
+    window.addEventListener('beforeunload', this.enableScroll);
+  },
+};
 </script>
  
  
