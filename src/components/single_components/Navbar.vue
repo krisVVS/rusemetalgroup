@@ -158,9 +158,5 @@
     .nav-list-open{
       padding: 1em 0 0 0;
     }
- 
-    .navbar{
-      border-bottom: solid 2px white;
-    }
   }
   </style>
